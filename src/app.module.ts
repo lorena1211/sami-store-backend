@@ -7,6 +7,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { APP_GUARD } from '@nestjs/core';
 import { HealthController } from './health.controller';
 import { UsersModule } from './modules/users/users.module';
+import { UsersService } from './modules/users/users.service';
 import { AuthModule } from './modules/auth/auth.module';
 
 
@@ -16,12 +17,12 @@ import { AuthModule } from './modules/auth/auth.module';
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 100 }]),
     PrismaModule,
     AuthModule,
-    UserModule,
-    CategoriesModule,
-    ProductsModule,
-    OrdersModule,
-    UploadsModule,
     UsersModule,
+    //CategoriesModule,
+    //ProductsModule,
+    //OrdersModule,
+    //UploadsModule,
+    UsersService,
   ],
   controllers: [HealthController],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
