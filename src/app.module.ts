@@ -7,6 +7,8 @@ import { APP_GUARD } from '@nestjs/core';
 import { HealthController } from './health.controller';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { CategoriesModule } from './modules/categories/categories.module';
+import { ProductsModule } from './modules/products/products.module';
 
 
 @Module({
@@ -16,8 +18,8 @@ import { AuthModule } from './modules/auth/auth.module';
     PrismaModule,
     AuthModule,
     UsersModule,
-    //CategoriesModule,
-    //ProductsModule,
+    CategoriesModule,
+    ProductsModule,
     //OrdersModule,
     //UploadsModule,
   ],
